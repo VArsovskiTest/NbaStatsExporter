@@ -1,0 +1,143 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "iam:CreateAccessKey",
+            "Resource": "arn:aws:iam::*:user/${aws:username}"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:ListAccessKeys",
+            "Resource": "arn:aws:iam::*:user/${aws:username}"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:DeleteAccessKey",
+            "Resource": "arn:aws:iam::*:user/${aws:username}"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:UpdateAccessKey",
+            "Resource": "arn:aws:iam::*:user/${aws:username}"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:GetAccountSummary",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:ListMFADevices",
+            "Resource": "arn:aws:iam::*:user/${aws:username}"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:ListAccountAliases",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "athena:*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "kinesisanalytics:*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "firehose:*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "kinesis:*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "glue:*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "lambda:*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "securityhub:Describe*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "securityhub:Get*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "securityhub:List*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "servicecatalog:Describe*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "servicecatalog:Get*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "servicecatalog:List*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "servicecatalog:Search*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "servicecatalog:ProvisionProduct",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "servicecatalog:TerminateProvisionedProduct",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::*",
+                "arn:aws:s3:::*/*"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "aws:PrincipalAccount": "${AWS_IAM_ACCOUNT}"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:ListPolicies",
+            "Resource": "arn:aws:iam::${AWS_IAM_ACCOUNT}:policy/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:GetPolicy",
+            "Resource": "arn:aws:iam::${AWS_IAM_ACCOUNT}:policy/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "iam:GetPolicyVersion",
+            "Resource": "arn:aws:iam::${AWS_IAM_ACCOUNT}:policy/*"
+        }
+    ]
+}
